@@ -8,7 +8,7 @@ const certificates = [
     date: "Jan 2023 - Mar 2023",
     image:
       "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~MKJM547J85LS/CERTIFICATE_LANDING_PAGE~MKJM547J85LS.jpeg",
-    url:"https://coursera.org/share/62e413a69758291a75a73cacba8693b9"
+    url: "https://coursera.org/share/62e413a69758291a75a73cacba8693b9",
   },
   {
     name: "Advanced React",
@@ -16,7 +16,7 @@ const certificates = [
     date: "Jan 2023 - Feb 2023",
     image:
       "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~56RDASFDM5UT/CERTIFICATE_LANDING_PAGE~56RDASFDM5UT.jpeg",
-    url:"https://coursera.org/share/704528c2284e78334a0e14453e9265c6"
+    url: "https://coursera.org/share/704528c2284e78334a0e14453e9265c6",
   },
   {
     name: "Bachelor's in Telecommunications Engineering",
@@ -27,10 +27,13 @@ const certificates = [
 ---
 
 <Layout title="Anthony Chilan - Full Stack Developer">
-  <div class="grid grid-cols-[200px_1fr] min-h-screen">
-    <aside>
-      <Header />
-    </aside>
+  <!-- Responsive layout -->
+  <div class="md:grid md:grid-cols-[200px_1fr] min-h-screen flex flex-col">
+    <!-- Sidebar desktop -->
+   <aside>
+  <Header />
+</aside>
+    <!-- Contenido principal -->
     <main class="p-8 w-full max-w-[1600px] mx-auto">
       <header class="mb-12 text-center">
         <img
@@ -46,7 +49,6 @@ const certificates = [
 
       <section class="mb-12">
         <h2 class="text-2xl font-semibold mb-4">Experience</h2>
-
         <div class="mb-6">
           <h3 class="text-xl font-semibold">Mdconsgroup</h3>
           <p class="text-gray-400">May 2019 - Present · Guayaquil, Ecuador</p>
@@ -91,7 +93,6 @@ const certificates = [
 
       <section class="mb-12">
         <h2 class="text-2xl font-semibold mb-4">Education</h2>
-
         <ul class="list-disc list-inside text-gray-300">
           <li>
             <strong>Coursera</strong>: FrontEnd Developer (Jan 2023 - Mar 2023)
@@ -105,27 +106,29 @@ const certificates = [
           </li>
         </ul>
       </section>
+
       <section class="mb-12">
         <h2 class="text-2xl font-semibold mb-4">Certificates</h2>
-
         <ul class="list-disc list-inside text-gray-300">
           {certificates.map((cert) => (
-            <li key={cert.name} class="mb-4"
-               
-                style={{ cursor: "pointer" }}>
+            <li
+              key={cert.name}
+              class="mb-4"
+              style={{ cursor: "pointer" }}
+            >
               <strong>{cert.name}</strong> - {cert.issuer} ({cert.date})
               {cert.image && (
                 <img
                   src={cert.image}
                   onclick={() => window.open(cert.url, "_blank")}
                   alt={cert.name}
-                  class="w-[800px] h-[400px] mt-2 rounded-lg"
+                  class="w-full sm:w-[600px] h-auto mt-2 rounded-lg"
                 />
               )}
             </li>
           ))}
         </ul>
-        </section>
+      </section>
 
       <footer class="text-center text-sm text-gray-500">
         <p>&copy; 2025 Anthony Chilan. All rights reserved.</p>

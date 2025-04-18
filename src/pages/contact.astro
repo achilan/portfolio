@@ -4,10 +4,14 @@ import Header from "../components/Header.astro";
 ---
 
 <Layout title="Anthony Chilan - Full Stack Developer">
-  <div class="grid grid-cols-[200px_1fr] min-h-screen">
+  <!-- Responsive layout: columna en desktop, stacked en móvil -->
+  <div class="md:grid md:grid-cols-[200px_1fr] min-h-screen flex flex-col">
+    <!-- Sidebar/Header -->
     <aside>
-      <Header />
-    </aside>
+        <Header />
+      </aside>
+
+    <!-- Main Content -->
     <main class="p-8 w-full max-w-[1600px] mx-auto">
       <main class="max-w-2xl mx-auto p-8">
         <header class="mb-12 text-center">
@@ -21,10 +25,12 @@ import Header from "../components/Header.astro";
           <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
           <div class="text-gray-300">
             <p class="mb-2">
-              Email: <a
+              Email:
+              <a
                 href="mailto:anthony.chilanp@gmail.com"
                 class="text-blue-400 hover:underline"
-                >anthony.chilanp@gmail.com</a>
+                >anthony.chilanp@gmail.com</a
+              >
             </p>
             <p>Location: Guayaquil, Ecuador</p>
           </div>

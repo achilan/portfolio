@@ -1,22 +1,24 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import FeaturedWork from '../components/FeaturedWork.astro';
 import ProcessSection from '../components/ProcessSection.astro';
-
 ---
 
-<Layout title="Portfolio - Product Designer from Barcelona">
-  <div class="grid grid-cols-[200px_1fr] min-h-screen">
-    <aside>
-      <Header />
-    </aside>
+<Layout title="Portfolio - Anthony Chilan">
+  <!-- Responsive layout: grid en desktop, stacked en móvil -->
+  <div class="md:grid md:grid-cols-[200px_1fr] min-h-screen flex flex-col">
+    <!-- Sidebar en desktop -->
+   <aside>
+  <Header />
+</aside>
+
+    <!-- Contenido principal -->
     <main class="p-8 w-full max-w-[1600px] mx-auto">
       <Hero />
       <FeaturedWork />
-     <!--  <ProcessSection /> -->
+      <!-- <ProcessSection /> -->
     </main>
   </div>
 </Layout>

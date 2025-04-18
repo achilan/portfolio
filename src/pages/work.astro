@@ -100,10 +100,12 @@ const projects = [
 ---
 
 <Layout title="Anthony Chilan - Full Stack Developer">
-  <div class="grid grid-cols-[200px_1fr] min-h-screen">
-    <aside>
-      <Header />
-    </aside>
+  <div class="min-h-screen flex flex-col md:grid md:grid-cols-[200px_1fr]">
+    <!-- Sidebar desktop -->
+   <aside>
+  <Header />
+</aside>
+    <!-- Contenido principal -->
     <main class="p-8 w-full max-w-[1600px] mx-auto">
       <header class="mb-12 text-center">
         <h1 class="text-4xl font-bold mb-2">Anthony Chilan</h1>
@@ -112,8 +114,11 @@ const projects = [
         </p>
       </header>
 
-      <div class="grid grid-cols-3 gap-4 mb-4 min-w-full">
-        {projects.map((project) => <ProjectCard project={project} />)}
+      <!-- Grid responsive de proyectos -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        {projects.map(project => (
+          <ProjectCard project={project} />
+        ))}
       </div>
 
       <footer class="text-center text-sm text-gray-500">
@@ -121,4 +126,7 @@ const projects = [
       </footer>
     </main>
   </div>
+
+  <!-- Script menú móvil -->
+
 </Layout>
