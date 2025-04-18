@@ -1,0 +1,25 @@
+---
+const { project } = Astro.props;
+---
+
+<a 
+  href={project.url} 
+  target="_blank" 
+  rel="noopener noreferrer" 
+  class="cursor-pointer overflow-hidden group block"
+>
+  <div class="relative w-full pb-[66.67%] overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
+      <div class="text-center">
+        <h3 class="text-lg font-semibold mb-2">{project.title}</h3>
+        <p class="text-sm">{project.description}</p>
+      </div>
+    </div>
+    <img 
+      src={project.image} 
+      alt={project.title} 
+      class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 hover:opacity-40"
+    />
+  </div>
+</a>

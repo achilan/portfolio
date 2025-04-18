@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+  {
+    id: 1,
+    image: "/grainlink_03.png",
+    title: "Grainlink",
+    description: "Application for tracking transportation of grain",
+    url: "https://grainlogistics.net/",
+  },
+  {
+    id: 2,
+    image: "/tracto_diesel_01.png",
+    title: "Tracto Diesel",
+    description: "Application for human resources management",
+    url: "https://tractodiesel.com.ec/",
+  },
+  {
+    id: 3,
+    image: "/labs_01.png",
+    title: "Labs",
+    description: "Application for ordering and managing laboratory tests",
+    url: "https://apps.apple.com/ec/app/labs/id1587751232",
+  },
+  {
+    id: 4,
+    image: "/damasco_app.png",
+    title: "Damasco",
+    description: "Application for tracking diseases and symptoms",
+  },
+  {
+    id: 5,
+    image:
+      "https://mdconsgroup.com/assets/images/products/aiworks-colangioscopia.jpeg",
+    title: "Aiworks colangioscopy",
+    description: "Application integrated with AI for colangioscopy",
+    url: "https://mdconsgroup.com/aiworks-cholangioscopy",
+  },
+  {
+    id: 6,
+    image: "/colonoscopy.png",
+    title: "Aiworks colonoscopy",
+    description: "Application integrated with AI for colonoscopy",
+    url: "https://mdconsgroup.com/aiworks-colonoscopy",
+  },
+  {
+    id: 7,
+    image: "https://mdconsgroup.com/assets/images/products/aiworks-eus.jpg",
+    title: "Aiworks EUS",
+    description: "Application integrated with AI for medical imaging",
+    url: "https://mdconsgroup.com/aiworks-eus",
+  },
+  {
+    id: 8,
+    image:
+      "https://mdconsgroup.com/assets/images/products/education-virtual-reality.webp",
+    title: "MDCONS",
+    description: "Server for managing virtual reality applications",
+    url: "https://mdconsgroup.com/hxtend",
+  },
+  {
+    id: 9,
+    image: "https://zeehire.com/assets/imgs/page/homepage5/banner1.png",
+    title: "Zeehire",
+    description: "Application for finding and managing jobs",
+    url: "https://zeehire.com/",
+  },
+];
+---
+
+<Layout title="Anthony Chilan - Full Stack Developer">
+  <div class="grid grid-cols-[200px_1fr] min-h-screen">
+    <aside>
+      <Header />
+    </aside>
+    <main class="p-8 w-full max-w-[1600px] mx-auto">
+      <header class="mb-12 text-center">
+        <h1 class="text-4xl font-bold mb-2">Anthony Chilan</h1>
+        <p class="text-lg text-gray-400">
+          Full Stack Developer · CTO · Mobile & Web Specialist
+        </p>
+      </header>
+
+      <div class="grid grid-cols-3 gap-4 mb-4 min-w-full">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+
+      <footer class="text-center text-sm text-gray-500">
+        <p>&copy; 2025 Anthony Chilan. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+</Layout>

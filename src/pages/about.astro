@@ -1,0 +1,135 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+const certificates = [
+  {
+    name: "FrontEnd Developer",
+    issuer: "Coursera",
+    date: "Jan 2023 - Mar 2023",
+    image:
+      "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~MKJM547J85LS/CERTIFICATE_LANDING_PAGE~MKJM547J85LS.jpeg",
+    url:"https://coursera.org/share/62e413a69758291a75a73cacba8693b9"
+  },
+  {
+    name: "Advanced React",
+    issuer: "Coursera",
+    date: "Jan 2023 - Feb 2023",
+    image:
+      "https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~56RDASFDM5UT/CERTIFICATE_LANDING_PAGE~56RDASFDM5UT.jpeg",
+    url:"https://coursera.org/share/704528c2284e78334a0e14453e9265c6"
+  },
+  {
+    name: "Bachelor's in Telecommunications Engineering",
+    issuer: "Universidad de Guayaquil",
+    date: "Oct 2014 - Oct 2020",
+  },
+];
+---
+
+<Layout title="Anthony Chilan - Full Stack Developer">
+  <div class="grid grid-cols-[200px_1fr] min-h-screen">
+    <aside>
+      <Header />
+    </aside>
+    <main class="p-8 w-full max-w-[1600px] mx-auto">
+      <header class="mb-12 text-center">
+        <img
+          src="https://mir-s3-cdn-cf.behance.net/user/115/bb38e4288514187.64f9d15eef066.jpg"
+          alt="Anthony Chilan"
+          class="w-32 h-32 rounded-full mx-auto mb-4"
+        />
+        <h1 class="text-3xl font-bold mb-2">Anthony Chilan</h1>
+        <p class="text-lg text-gray-400">
+          Full Stack Developer · CTO · Mobile & Web Specialist
+        </p>
+      </header>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Experience</h2>
+
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold">Mdconsgroup</h3>
+          <p class="text-gray-400">May 2019 - Present · Guayaquil, Ecuador</p>
+          <ul class="list-disc list-inside text-gray-300">
+            <li>
+              Software Developer (Jul 2022 - Present): Developed AI Detector for
+              neoplasia detection with endoscope
+            </li>
+            <li>
+              Senior Computer Programmer (Jul 2021 - Present): Developed mobile
+              and web apps
+            </li>
+            <li>
+              Web Developer (May 2019 - Present): Built medical scheduling
+              system, accounting system, and web services
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold">Zee</h3>
+          <p class="text-gray-400">
+            Chief Technology Officer · Jul 2021 - Present · Guayaquil, Ecuador
+          </p>
+          <p class="text-gray-300">
+            Leading tech innovation and strategy to elevate the digital
+            platform.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-xl font-semibold">Soludesign</h3>
+          <p class="text-gray-400">
+            Mobile App Developer · May 2018 - Present · Guayaquil, Ecuador
+          </p>
+          <p class="text-gray-300">
+            Developed apps like MARCOSA for Android and web services using
+            Laravel.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Education</h2>
+
+        <ul class="list-disc list-inside text-gray-300">
+          <li>
+            <strong>Coursera</strong>: FrontEnd Developer (Jan 2023 - Mar 2023)
+          </li>
+          <li>
+            <strong>Coursera</strong>: Advanced React (Jan 2023 - Feb 2023)
+          </li>
+          <li>
+            <strong>Universidad de Guayaquil</strong>: Bachelor's in
+            Telecommunications Engineering (Oct 2014 - Oct 2020)
+          </li>
+        </ul>
+      </section>
+      <section class="mb-12">
+        <h2 class="text-2xl font-semibold mb-4">Certificates</h2>
+
+        <ul class="list-disc list-inside text-gray-300">
+          {certificates.map((cert) => (
+            <li key={cert.name} class="mb-4"
+               
+                style={{ cursor: "pointer" }}>
+              <strong>{cert.name}</strong> - {cert.issuer} ({cert.date})
+              {cert.image && (
+                <img
+                  src={cert.image}
+                  onclick={() => window.open(cert.url, "_blank")}
+                  alt={cert.name}
+                  class="w-[800px] h-[400px] mt-2 rounded-lg"
+                />
+              )}
+            </li>
+          ))}
+        </ul>
+        </section>
+
+      <footer class="text-center text-sm text-gray-500">
+        <p>&copy; 2025 Anthony Chilan. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+</Layout>
